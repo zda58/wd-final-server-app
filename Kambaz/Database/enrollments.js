@@ -49,4 +49,4 @@ export default [
     "user": "777",
     "course": "RS102"
   }
-]
+];
