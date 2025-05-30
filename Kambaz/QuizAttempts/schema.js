@@ -16,7 +16,6 @@ const questionSchema = new mongoose.Schema({
 });
 
 const answerSchema = new mongoose.Schema({
-  _id: { type: String, required: true },
   questionID: String,
   multipleAnswerID: String,
   boolAnswer: Boolean,
@@ -25,6 +24,7 @@ const answerSchema = new mongoose.Schema({
 
 const quizAttemptSchema = new mongoose.Schema({
   _id: String,
+  quizID: String,
   userID: String,
   attemptStartTime: String,
   attemptEndTime: String,

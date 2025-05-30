@@ -17,24 +17,25 @@ const questionSchema = new mongoose.Schema({
 
 const quizSchema = new mongoose.Schema({
   _id: String,
-  title: String, //
-  course: String, //
+  title: String,
+  course: String,
+  published: Boolean,
   description: String,
-  type: String, //
-  group: String, //
+  type: String,
+  group: String,
 
-  shuffleAnswers: Boolean, //
-  timeLimit: Boolean, //
-  mins: Number, //
-  multipleAttempts: Boolean, //
-  attempts: Number, //
+  shuffleAnswers: Boolean,
+  timeLimit: Boolean,
+  mins: Number,
+  multipleAttempts: Boolean,
+  attempts: Number,
 
-  showCorrect: String, //
-  showTime: String, //
+  showCorrect: String,
+  showTime: String,
 
-  oneQuestionAtTime: Boolean, //
-  requiredWebcam: Boolean, //
-  lockAfterAnswering: Boolean, //
+  oneQuestionAtTime: Boolean,
+  requiredWebcam: Boolean,
+  lockAfterAnswering: Boolean,  
   
   assignTo: [String],
   due: String,
