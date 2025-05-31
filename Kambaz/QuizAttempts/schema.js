@@ -19,7 +19,7 @@ const answerSchema = new mongoose.Schema({
   questionID: String,
   multipleAnswerID: String,
   boolAnswer: Boolean,
-  fillAnswers: String,
+  fillAnswer: String,
 });
 
 const quizAttemptSchema = new mongoose.Schema({

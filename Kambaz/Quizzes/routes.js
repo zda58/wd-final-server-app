@@ -35,7 +35,8 @@ export default function QuizRoutes(app) {
 
   const getQuizAttemptsForUser = async (req, res) => {
     const { qid, uid } = req.params;
-    return quizAttemptsDao.fetchQuizAttempts(qid, uid);
+    const quizAttempts = await quizAttemptsDao.fetchQuizAttempts(qid, uid);
+    res.json(quizAttempts);
   };
   app.get("/api/quizzes/:qid/attempts/:uid", getQuizAttemptsForUser);
 
@@ -43,7 +44,8 @@ export default function QuizRoutes(app) {
     const { qid, uid } = req.params;
     const attempt = req.body;
     const newAttempt = { ...attempt, quizID: qid, userID: uid };
-    return quizAttemptsDao.createQuizAttempt(newAttempt);
+    const created = await quizAttemptsDao.createQuizAttempt(newAttempt);
+    res.json(created);
   }
   app.post("/api/quizzes/:qid/attempts/:uid", recordQuizAttempt);
 }
