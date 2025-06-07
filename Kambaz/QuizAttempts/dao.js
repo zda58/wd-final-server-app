@@ -10,3 +10,6 @@ export function createQuizAttempt(attempt) {
   return model.create(newAttempt);
 };
 
+export function fetchAttemptsForUser(uid) {
+  return model.find({ userID: uid });
+};
