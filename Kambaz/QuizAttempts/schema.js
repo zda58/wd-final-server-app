@@ -13,6 +13,11 @@ const questionSchema = new mongoose.Schema({
   multipleAnswerID: String,
   boolAnswer: Boolean,
   fillAnswers: [String],
+  fillBlanks: [{
+    _id: String,
+    label: String,
+    answers: [String],
+  }]
 });
 
 const answerSchema = new mongoose.Schema({
